@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
-import { increaseConter } from "../redux/actions/counterActions";
+import { increaseCounter } from "../redux/actions/counterActions";
 
 class IncreaseCounter extends Component {
   render() {
@@ -9,7 +9,7 @@ class IncreaseCounter extends Component {
       <div>
         <button
           onClick={(e) => {
-            this.props.dispatch(increaseConter());
+            this.props.dispatch(increaseCounter());
           }}
         >
           1 Arttır
@@ -20,6 +20,6 @@ class IncreaseCounter extends Component {
 }
 
 function mapDispatchToProps(dispatch) {
-  return { actions: bindActionCreators(increaseConter, dispatch) };
+  return { actions: bindActionCreators(increaseCounter, dispatch) };
 }
 export default connect(mapDispatchToProps)(IncreaseCounter);
